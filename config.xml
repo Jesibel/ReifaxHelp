@@ -42,10 +42,10 @@
   <!-- Define app icon for each platform. -->
   <icon src="resources/image/ReiFax_Help_logo-120.png"/>
   
-  <icon src="resources/image/logo-reifax-help36.png"   gap:platform="android"    gap:density="ldpi" />
-  <icon src="resources/image/logo-reifax-help48.png"   gap:platform="android"    gap:density="mdpi" />
-  <icon src="resources/image/logo-reifax-help72.png"   gap:platform="android"    gap:density="hdpi" />
-  <icon src="resources/image/logo-reifax-help96.png"   gap:platform="android"    gap:density="xhdpi" />
+  <icon src="resources/image/logo-36.png"   gap:platform="android"    gap:density="ldpi" />
+  <icon src="resources/image/logo-48.png"   gap:platform="android"    gap:density="mdpi" />
+  <icon src="resources/image/logo-72.png"   gap:platform="android"    gap:density="hdpi" />
+  <icon src="resources/image/logo-96.png"   gap:platform="android"    gap:density="xhdpi" />
   
   <icon src="resources/image/ReiFax_Help_logo-29.png"   gap:platform="ios"        width="29" height="29" />
   <icon src="resources/image/ReiFax_Help_logo-40.png"   gap:platform="ios"        width="40" height="40" />
@@ -74,7 +74,7 @@
   <gap:splash src="resources/image/logoV_480.png"  gap:platform="ios"     width="320"  height="480" />
   <gap:splash src="resources/image/logoV_960.png"  gap:platform="ios"     width="640"  height="960" />
   <gap:splash src="resources/image/logoV_768.png"  gap:platform="ios"     width="768"  height="1024" />
-  <gap:splash src="resources/image/logoH_768.png" gap:platform="ios"     width="1024" height="768" />
+  <gap:splash src="resources/image/logoH_768.png"  gap:platform="ios"     width="1024" height="768" />
 
 
   <gap:plugin name="org.apache.cordova.media" />	
