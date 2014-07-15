@@ -760,10 +760,10 @@
 						<div class="ui-block-b grid">
 							<div class="ui-bar ui-bar-a tails max lef" style="border-radius:none !important;background-color:#fff;border-color:#fff;">	
 								<a style="width: 48%; float: left;" class="face excecute ui-link ui-btn2 ui-shadow ui-corner-all btn" href="#contactusHtml" data-transition="slide" data-title="CONTACT" role="button">
-								<img class="face" src="resources/image/tiles/mobile/contact_us2.png"/>	
+								<img class="face" src="resources/image/tiles/mobile/contact_us_mini.png"/>	
 								</a>
 								<a style="width: 48%; float: right;" class="face excecute ui-link ui-btn2 ui-shadow ui-corner-all btn" href="#aboutusHtml" data-transition="slide" data-title="ABOUT" role="button">
-								<img  class="face" src="resources/image/tiles/mobile/about_us2.png"/>
+								<img  class="face" src="resources/image/tiles/mobile/about_us_mini.png"/>
 								</a>
 							</div>
 						</div>
@@ -2409,7 +2409,8 @@ $(document).ready(function () {
 	
 	
 	
-				
+						
+	//hide1	
 	$('#hideText').click(function(){
 		$('#searchInicio').animate({width:'toggle'},1000);
 		$(this).fadeOut();
@@ -2422,190 +2423,132 @@ $(document).ready(function () {
 		$('#hideText').fadeIn();
 		$( '#webGeneralHtml' ).attr( 'src', function ( i, val ) { return val; });
 	});
-		
+	//hide1	
 	$('#hide1').click(function(){
-	    $('#searchHomePage').animate({width:'toggle'},1000);
+	    $('#searchWeekly').animate({width:'toggle'},1000);
 		$(this).fadeOut();
 		$('#show1').fadeIn();
 	});
 
 	$('#show1').click(function(){
-		$('#searchHomePage').animate({width:'toggle'},1000);
+		$('#searchWeekly').animate({width:'toggle'},1000);
 		$(this).fadeOut();
 		$('#hide1').fadeIn();
-		$( '#webHomePageHtml' ).attr( 'src', function ( i, val ) { return val; });
-		$("input#searchHomePage").val('');
+		$( '#webWeeklyHtml' ).attr( 'src', function ( i, val ) { return val; });
+		$("input#searchWeekly").val('');
 	});
-
+	//hide2
 	$('#hide2').click(function(){
-		$('#searchMyAccount').animate({width:'toggle'},1000);
+		$('#searchTest').animate({width:'toggle'},1000);
 		$(this).fadeOut();
 		$('#show2').fadeIn();
 	});
 
 	$('#show2').click(function(){
-		$('#searchMyAccount').animate({width:'toggle'},1000);
+		$('#searchTest').animate({width:'toggle'},1000);
 		$(this).fadeOut();
 		$('#hide2').fadeIn();
-		$( '#webMyaccountHtml' ).attr( 'src', function ( i, val ) { return val; });
-		$("input#searchMyAccount").val('');
+		$( '#webTestimonialsHtml' ).attr( 'src', function ( i, val ) { return val; });
+		$("input#searchTest").val('');
 	});
-
+	//hide3
 	$('#hide3').click(function(){
-		$('#searchBasic').animate({width:'toggle'},1000);
+		$('#searchFaq').animate({width:'toggle'},1000);
 		$(this).fadeOut();
 		$('#show3').fadeIn();
 	});
 
 	$('#show3').click(function(){
-		$('#searchBasic').animate({width:'toggle'},1000);
+		$('#searchFaq').animate({width:'toggle'},1000);
 		$(this).fadeOut();
 		$('#hide3').fadeIn();
-		$( '#webBasicHtml' ).attr( 'src', function ( i, val ) { return val; });
-		$("input#searchBasic").val('');
+		$( '#webFaqHtml' ).attr( 'src', function ( i, val ) { return val; });
+		$("input#searchFaq").val('');
 	});
-
+	//hide4
 	$('#hide4').click(function(){
-		$('#searchOverview').animate({width:'toggle'},1000);
+		$('#searchArt').animate({width:'toggle'},1000);
 		$(this).fadeOut();
 		$('#show4').fadeIn();
 	});
 
 	$('#show4').click(function(){
-		$('#searchOverview').animate({width:'toggle'},1000);
+		$('#searchArt').animate({width:'toggle'},1000);
 		$(this).fadeOut();
 		$('#hide4').fadeIn();
-		$( '#webOverviewHtml' ).attr( 'src', function ( i, val ) { return val; });
-		$("input#searchOverview").val('');
+		$( '#webArticlesHtml' ).attr( 'src', function ( i, val ) { return val; });
+		$("input#searchArt").val('');
 	});
-
+	//hide5
 	$('#hide5').click(function(){
-		$('#searchBrowser').animate({width:'toggle'},1000);
+		$('#searchAudios').animate({width:'toggle'},1000);
 		$(this).fadeOut();
 		$('#show5').fadeIn();
 	});
 
 	$('#show5').click(function(){
-		$('#searchBrowser').animate({width:'toggle'},1000);
+		$('#searchAudios').animate({width:'toggle'},1000);
 		$(this).fadeOut();
 		$('#hide5').fadeIn();
-		$( '#webBrowserHtml' ).attr( 'src', function ( i, val ) { return val; });
-		$("input#searchBrowser").val('');
+		$( '#webAudiosHtml' ).attr( 'src', function ( i, val ) { return val; });
+		$("input#searchAudios").val('');
 	});
-
+	//hide6
 	$('#hide6').click(function(){
-		$('#searchSearch').animate({width:'toggle'},1000);
+		$('#searchVideos').animate({width:'toggle'},1000);
 		$(this).fadeOut();
 		$('#show6').fadeIn();
 	});
 
 	$('#show6').click(function(){
-		$('#searchSearch').animate({width:'toggle'},1000);
+		$('#searchVideos').animate({width:'toggle'},1000);
 		$(this).fadeOut();
 		$('#hide6').fadeIn();
-		$( '#webSearchHtml' ).attr( 'src', function ( i, val ) { return val; });
-		$("input#searchSearch").val('');
+		$( '#webVideosHtml' ).attr( 'src', function ( i, val ) { return val; });
+		$("input#searchVideos").val('');
 	});
-	
+	//hide7
 	$('#hide7').click(function(){
-		$('#searchResult').animate({width:'toggle'},1000);
+		$('#searchFiles').animate({width:'toggle'},1000);
 		$(this).fadeOut();
 		$('#show7').fadeIn();
 	});
 
 	$('#show7').click(function(){
-		$('#searchResult').animate({width:'toggle'},1000);
+		$('#searchFiles').animate({width:'toggle'},1000);
 		$(this).fadeOut();
 		$('#hide7').fadeIn();
-		$( '#webResultHtml' ).attr( 'src', function ( i, val ) { return val; });
-		$("input#searchResult").val('');
+		$( '#webFilesHtml' ).attr( 'src', function ( i, val ) { return val; });
+		$("input#searchFiles").val('');
 	});
-
+	//hide8
 	$('#hide8').click(function(){
-		$('#searchMarket').animate({width:'toggle'},1000);
+		$('#searchRec').animate({width:'toggle'},1000);
 		$(this).fadeOut();
 		$('#show8').fadeIn();
 	});
 
 	$('#show8').click(function(){
-		$('#searchMarket').animate({width:'toggle'},1000);
+		$('#searchRec').animate({width:'toggle'},1000);
 		$(this).fadeOut();
 		$('#hide8').fadeIn();
-		$( '#webMarketHtml' ).attr( 'src', function ( i, val ) { return val; });
-		$("input#searchMarket").val('');
+		$( '#webRecentHtml' ).attr( 'src', function ( i, val ) { return val; });
+		$("input#searchRec").val('');
 	});
-
+	//hide9
 	$('#hide9').click(function(){
-		$('#searchReport').animate({width:'toggle'},1000);
+		$('#searchMeet').animate({width:'toggle'},1000);
 		$(this).fadeOut();
 		$('#show9').fadeIn();
 	});
 
 	$('#show9').click(function(){
-		$('#searchReport').animate({width:'toggle'},1000);
+		$('#searchMeet').animate({width:'toggle'},1000);
 		$(this).fadeOut();
 		$('#hide9').fadeIn();
-		$( '#webReportHtml' ).attr( 'src', function ( i, val ) { return val; });
-		$("input#searchReport").val('');
+		$( '#webMeetingHtml' ).attr( 'src', function ( i, val ) { return val; });
+		$("input#searchMeet").val('');
 	});
-
-	$('#hide10').click(function(){
-		$('#searchMailing').animate({width:'toggle'},1000);
-		$(this).fadeOut();
-		$('#show10').fadeIn();
-	});
-
-	$('#show10').click(function(){
-		$('#searchMailing').animate({width:'toggle'},1000);
-		$(this).fadeOut();
-		$('#hide10').fadeIn();
-		$( '#webMailingHtml' ).attr( 'src', function ( i, val ) { return val; });
-		$("input#searchMailing").val('');
-	});
-
-	$('#hide11').click(function(){
-		$('#searchSetting').animate({width:'toggle'},1000);
-		$(this).fadeOut();
-		$('#show11').fadeIn();
-	});
-
-	$('#show11').click(function(){
-		$('#searchSetting').animate({width:'toggle'},1000);
-		$(this).fadeOut();
-		$('#hide11').fadeIn();
-		$( '#webSettingsHtml' ).attr( 'src', function ( i, val ) { return val; });
-		$("input#searchSetting").val('');
-	});
-
-	$('#hide12').click(function(){
-		$('#searchFollow').animate({width:'toggle'},1000);
-		$(this).fadeOut();
-		$('#show12').fadeIn();
-	});
-
-	$('#show12').click(function(){
-		$('#searchFollow').animate({width:'toggle'},1000);
-		$(this).fadeOut();
-		$('#hide12').fadeIn();
-		$( '#webFollowupHtml' ).attr( 'src', function ( i, val ) { return val; });
-		$("input#searchFollow").val('');
-	});
-
-	$('#hide15').click(function(){
-		$('#searchWebinar').animate({width:'toggle'},1000);
-		$(this).fadeOut();
-		$('#show15').fadeIn();
-	});
-
-	$('#show15').click(function(){
-		$('#searchWebinar').animate({width:'toggle'},1000);
-		$(this).fadeOut();
-		$('#hide15').fadeIn();
-		$( '#webWebinarHtml' ).attr( 'src', function ( i, val ) { return val; });
-		$("input#searchWebinar").val('');
-	});
-	
-	
 	
 				
     $('#sendButton').bind('click', function (e) {
