@@ -2063,7 +2063,680 @@
 //$('#homeHtml').attr('src','http://aoreiamobile.aoreia.com/homeinside.php');
 </script>
 
+<script type="text/javascript">
+	//menuClick('menu-home');
+	$(function() {
+	  setTimeout(hideSplash, 2000);
+	});
 
+	function hideSplash() {
+	  $.mobile.changePage("#inicio", "fade");
+	}
+	
+	function exitFromApp(){
+        //console.log("in button");
+        navigator.app.exitApp();
+    }
+	
+$(document).ready(function () {
+
+	
+	$("#searchInicio").on("keypress", function(e){       
+	
+	if ($(".searchInicio:focus")&& (e.keyCode === 13)) {
+	  //alert("The enter key was pressed");
+			var searchI = $("input#searchInicio").val();
+			//alert(searchI);
+			$.post('http://reifaxhelper.booleam.com/fetch_pages_General.php',{'searchInicio': searchI,page:0}, function(data) {
+				if(searchI!=""){
+					//alert(searchI);
+					//alert('aqui');
+					$.mobile.changePage("#generalHtml");
+					$("#webGeneralHtml").contents().find("#results").empty();
+					$("#webGeneralHtml").contents().find("#results").append(data);
+					$("input#searchInicio").val('');
+				}else{				
+					$("#webGeneralHtml").contents().find("#results").empty();
+					$("#webGeneralHtml").contents().find("#results").append(data);
+					$("input#searchInicio").val('');
+				}
+					
+				}).fail(function(xhr, ajaxOptions, thrownError) { 
+					alert(thrownError); //alert any HTTP error
+					$(".load_more").show(); //bring back load more button
+					$('.animation_image').hide(); //hide loading image once data is received
+				});
+	   
+		}
+	
+	
+	});
+	
+	$("#searchHomePage").on("keypress", function(e){               	
+		
+		if ($(".searchHomePage:focus") && (e.keyCode === 13)) {
+			var search = $("input#searchHomePage").val();
+				//alert("The enter key was pressed");
+				//alert(search);
+		
+			$.ajax({						 
+				type: 'POST',			
+				url: 'http://reifaxhelper.booleam.com/fetch_pages_Home_Pages.php',
+				data: {'searchHomePage': search,page:0},   
+				//crossDomain : false , 
+				success:function(data){
+				 //alert('Works!');
+					$("#webHomePageHtml").contents().find("#results").empty();
+					$("#webHomePageHtml").contents().find("#results").append(data);
+					//$("#webWeeklyHtml").trigger(data);							
+				},
+				error:function(exception){
+				alert('Not work');
+									
+				}
+		    });
+		
+		/*$.post('fetch_pages.php',{'searchWeekly': search,page:0}, function(data) {
+				alert('Works!');
+				$("#webWeeklyHtml").contents().find("#results").empty();
+				$("#webWeeklyHtml").contents().find("#results").append(data);
+				
+		}).fail(function(xhr, ajaxOptions, thrownError) {
+			alert('Not Works!');
+			consola.log (thrownError);//alert any HTTP error
+			consola.log (xhr);
+			consola.log (ajaxOptions);
+			$(".load_more").show(); //bring back load more button
+			$('.animation_image').hide(); //hide loading image once data is received
+		});*/
+		
+       //e.preventDefault();
+	   
+      }
+	
+	});
+	
+	
+	$("#searchMyAccount").on("keypress", function(e){ 
+
+	 if ($(".searchMyAccount:focus") && (e.keyCode === 13)) {
+	   var search = $("input#searchMyAccount").val();
+	   
+       //alert(search);
+	   $.post('http://reifaxhelper.booleam.com/fetch_pages_My_Account.php',{'searchMyAccount': search,page:0}, function(data) {
+			
+				$("#webMyaccountHtml").contents().find("#results").empty();
+				$("#webMyaccountHtml").contents().find("#results").append(data);
+				
+			}).fail(function(xhr, ajaxOptions, thrownError) { 
+				alert(thrownError); //alert any HTTP error
+				$(".load_more").show(); //bring back load more button
+				$('.animation_image').hide(); //hide loading image once data is received
+			});
+	   
+    }
+	});
+	
+	$("#searchBasic").on("keypress", function(e){ 	
+    if ($(".searchBasic:focus") && (e.keyCode === 13)) {
+	   var search = $("input#searchBasic").val();
+	   
+       //alert(search);
+	   $.post('http://reifaxhelper.booleam.com/fetch_pages_Basic.php',{'searchBasic': search,page:0}, function(data) {
+			
+				$("#webBasicHtml").contents().find("#results").empty();
+				$("#webBasicHtml").contents().find("#results").append(data);
+				
+			}).fail(function(xhr, ajaxOptions, thrownError) { 
+				alert(thrownError); //alert any HTTP error
+				$(".load_more").show(); //bring back load more button
+				$('.animation_image').hide(); //hide loading image once data is received
+			});
+	   
+    }
+	});
+
+	$("#searchOverview").on("keypress", function(e){ 
+	if ($(".searchOverview:focus") && (e.keyCode === 13)) {
+	   var search = $("input#searchOverview").val();
+	   
+       //alert(search);
+	   $.post('http://reifaxhelper.booleam.com/fetch_pages_Overview.php',{'searchOverview': search,page:0}, function(data) {
+			
+				$("#webOverviewHtml").contents().find("#results").empty();
+				$("#webOverviewHtml").contents().find("#results").append(data);
+				
+			}).fail(function(xhr, ajaxOptions, thrownError) { 
+				alert(thrownError); //alert any HTTP error
+				$(".load_more").show(); //bring back load more button
+				$('.animation_image').hide(); //hide loading image once data is received
+			});
+	   
+    }
+	});
+	
+	$("#searchBrowser").on("keypress", function(e){ 	
+	if ($(".searchBrowser:focus") && (e.keyCode === 13)) {
+	   var search = $("input#searchBrowser").val();
+	   
+       //alert(search);
+	   $.post('http://reifaxhelper.booleam.com/fetch_pages_Browser.php',{'searchBrowser': search,page:0}, function(data) {
+			
+				$("#webBrowserHtml").contents().find("#results").empty();
+				$("#webBrowserHtml").contents().find("#results").append(data);
+				
+			}).fail(function(xhr, ajaxOptions, thrownError) { 
+				alert(thrownError); //alert any HTTP error
+				$(".load_more").show(); //bring back load more button
+				$('.animation_image').hide(); //hide loading image once data is received
+			});
+	   
+    }
+	});
+	
+	$("#searchSearch").on("keypress", function(e){ 	
+	if ($(".searchSearch:focus") && (e.keyCode === 13)) {
+	   var search = $("input#searchSearch").val();
+	   
+       //alert(search);
+	   $.post('http://reifaxhelper.booleam.com/fetch_pages_Search.php',{'searchSearch': search,page:0}, function(data) {
+			
+				$("#webSearchHtml").contents().find("#results").empty();
+				$("#webSearchHtml").contents().find("#results").append(data);
+				
+			}).fail(function(xhr, ajaxOptions, thrownError) { 
+				alert(thrownError); //alert any HTTP error
+				$(".load_more").show(); //bring back load more button
+				$('.animation_image').hide(); //hide loading image once data is received
+			});
+	   
+    }
+	});
+	
+	$("#searchResult").on("keypress", function(e){ 
+	if ($(".searchResult:focus") && (e.keyCode === 13)) {
+	   var search = $("input#searchResult").val();
+	   
+       //alert(search);
+	   $.post('http://reifaxhelper.booleam.com/fetch_pages_Result.php',{'searchResult': search,page:0}, function(data) {
+			
+				$("#webResultHtml").contents().find("#results").empty();
+				$("#webResultHtml").contents().find("#results").append(data);
+				
+			}).fail(function(xhr, ajaxOptions, thrownError) { 
+				alert(thrownError); //alert any HTTP error
+				$(".load_more").show(); //bring back load more button
+				$('.animation_image').hide(); //hide loading image once data is received
+			});
+	   
+    }
+	});
+	
+	$("#searchMarket").on("keypress", function(e){ 	
+	if ($(".searchMarket:focus") && (e.keyCode === 13)) {
+	   var search = $("input#searchMarket").val();
+	   
+       //alert(search);
+	   $.post('http://reifaxhelper.booleam.com/fetch_pages_Market.php',{'searchMarket': search,page:0}, function(data) {
+			
+				$("#webMarketHtml").contents().find("#results").empty();
+				$("#webMarketHtml").contents().find("#results").append(data);
+				
+			}).fail(function(xhr, ajaxOptions, thrownError) { 
+				alert(thrownError); //alert any HTTP error
+				$(".load_more").show(); //bring back load more button
+				$('.animation_image').hide(); //hide loading image once data is received
+			});
+	   
+    }
+	});
+	
+	$("#searchReport").on("keypress", function(e){ 	
+	if ($(".searchReport:focus") && (e.keyCode === 13)) {
+	   var search = $("input#searchReport").val();
+	   
+       //alert(search);
+	   $.post('http://reifaxhelper.booleam.com/fetch_pages_Report.php',{'searchReport': search,page:0}, function(data) {
+			
+				$("#webReportHtml").contents().find("#results").empty();
+				$("#webReportHtml").contents().find("#results").append(data);
+				
+			}).fail(function(xhr, ajaxOptions, thrownError) { 
+				alert(thrownError); //alert any HTTP error
+				$(".load_more").show(); //bring back load more button
+				$('.animation_image').hide(); //hide loading image once data is received
+			});
+	   
+    }
+	});
+	
+	$("#searchMailing").on("keypress", function(e){ 	
+	if ($(".searchMailing:focus") && (e.keyCode === 13)) {
+	   var search = $("input#searchMailing").val();
+	   
+       //alert(search);
+	   $.post('http://reifaxhelper.booleam.com/fetch_pages_Mailing.php',{'searchMailing': search,page:0}, function(data) {
+			
+				$("#webMailingHtml").contents().find("#results").empty();
+				$("#webMailingHtml").contents().find("#results").append(data);
+				
+			}).fail(function(xhr, ajaxOptions, thrownError) { 
+				alert(thrownError); //alert any HTTP error
+				$(".load_more").show(); //bring back load more button
+				$('.animation_image').hide(); //hide loading image once data is received
+			});
+	   
+    }
+	});
+
+	$("#searchSetting").on("keypress", function(e){ 	
+	if ($(".searchSetting:focus") && (e.keyCode === 13)) {
+	   var search = $("input#searchSetting").val();
+	   
+       //alert(search);
+	   $.post('http://reifaxhelper.booleam.com/fetch_pages_Settings.php',{'searchSetting': search,page:0}, function(data) {
+			
+				$("#webSettingsHtml").contents().find("#results").empty();
+				$("#webSettingsHtml").contents().find("#results").append(data);
+				
+			}).fail(function(xhr, ajaxOptions, thrownError) { 
+				alert(thrownError); //alert any HTTP error
+				$(".load_more").show(); //bring back load more button
+				$('.animation_image').hide(); //hide loading image once data is received
+			});
+	   
+    }
+	}); 
+	
+	$("#searchFollow").on("keypress", function(e){ 	
+	if ($(".searchFollow:focus") && (e.keyCode === 13)) {
+	   var search = $("input#searchFollow").val();
+	   
+       //alert(search);
+	   $.post('http://reifaxhelper.booleam.com/fetch_pages_Followup.php',{'searchFollow': search,page:0}, function(data) {
+			
+				$("#webFollowupHtml").contents().find("#results").empty();
+				$("#webFollowupHtml").contents().find("#results").append(data);
+				
+			}).fail(function(xhr, ajaxOptions, thrownError) { 
+				alert(thrownError); //alert any HTTP error
+				$(".load_more").show(); //bring back load more button
+				$('.animation_image').hide(); //hide loading image once data is received
+			});
+	   
+    }
+	});
+
+	$("#searchWebinar").on("keypress", function(e){ 	
+	if ($(".searchWebinar:focus") && (e.keyCode === 13)) {
+	   var search = $("input#searchWebinar").val();
+	   
+       //alert(search);
+	   $.post('http://reifaxhelper.booleam.com/fetch_pages_Webinar.php',{'searchWebinar': search,page:0}, function(data) {
+			
+				$("#webWebinarHtml").contents().find("#results").empty();
+				$("#webWebinarHtml").contents().find("#results").append(data);
+				
+			}).fail(function(xhr, ajaxOptions, thrownError) { 
+				alert(thrownError); //alert any HTTP error
+				$(".load_more").show(); //bring back load more button
+				$('.animation_image').hide(); //hide loading image once data is received
+			});
+	   
+    }
+	});
+	
+
+	$("#webHomepageHtml,#webMyaccountHtml,#webBasicHtml,#webOverviewHtml,#webBrowserHtml,#webSearchHtml,#webResultHtml,#webMarketHtml,#webReportHtml,#webMailingHtml,#webSettingsHtml,#webFollowupHtml,#webAboutusHtml,#webContactusHtml,#webWebinarHtml,#webLegalHtml,#webGeneralHtml").height($(window).height()-$("div.ui-page-active div[data-role='header']").height()-7-43);
+		
+    $('#saveSettings').bind('click', function (e) {
+			window.parent.document.getElementById("webSettingHtml").contentWindow.saveSettingsMobile();
+			//console.debug(window.parent.document.getElementById("webSettingHtml"));
+			//console.debug("window");
+	});
+	
+	$('#saveContactUs').bind('click', function (e) {
+			window.parent.document.getElementById("webContactsHtml").contentWindow.saveSettingsMobile();
+			//console.debug(window.parent.document.getElementById("webSettingHtml"));
+			//console.debug("window");
+	});
+	
+	$('#nose').bind('click', function (e) {
+			window.parent.document.getElementById("webStoreHtml").contentWindow.storeMobile();
+			//console.debug(window.parent.document.getElementById("webSettingHtml"));
+			//console.debug("window");
+	});
+	
+	
+	
+	$('#hideText').click(function(){
+		$('#searchInicio').animate({width:'toggle'},1000);
+		$(this).fadeOut();
+		$('#showText').fadeIn();
+	});
+
+	$('#showText').click(function(){
+		$('#searchInicio').animate({width:'toggle'},1000);
+		$(this).fadeOut();
+		$('#hideText').fadeIn();
+		$( '#webGeneralHtml' ).attr( 'src', function ( i, val ) { return val; });
+	});
+		
+	$('#hide1').click(function(){
+	    $('#searchHomePage').animate({width:'toggle'},1000);
+		$(this).fadeOut();
+		$('#show1').fadeIn();
+	});
+
+	$('#show1').click(function(){
+		$('#searchHomePage').animate({width:'toggle'},1000);
+		$(this).fadeOut();
+		$('#hide1').fadeIn();
+		$( '#webHomePageHtml' ).attr( 'src', function ( i, val ) { return val; });
+		$("input#searchHomePage").val('');
+	});
+
+	$('#hide2').click(function(){
+		$('#searchMyAccount').animate({width:'toggle'},1000);
+		$(this).fadeOut();
+		$('#show2').fadeIn();
+	});
+
+	$('#show2').click(function(){
+		$('#searchMyAccount').animate({width:'toggle'},1000);
+		$(this).fadeOut();
+		$('#hide2').fadeIn();
+		$( '#webMyaccountHtml' ).attr( 'src', function ( i, val ) { return val; });
+		$("input#searchMyAccount").val('');
+	});
+
+	$('#hide3').click(function(){
+		$('#searchBasic').animate({width:'toggle'},1000);
+		$(this).fadeOut();
+		$('#show3').fadeIn();
+	});
+
+	$('#show3').click(function(){
+		$('#searchBasic').animate({width:'toggle'},1000);
+		$(this).fadeOut();
+		$('#hide3').fadeIn();
+		$( '#webBasicHtml' ).attr( 'src', function ( i, val ) { return val; });
+		$("input#searchBasic").val('');
+	});
+
+	$('#hide4').click(function(){
+		$('#searchOverview').animate({width:'toggle'},1000);
+		$(this).fadeOut();
+		$('#show4').fadeIn();
+	});
+
+	$('#show4').click(function(){
+		$('#searchOverview').animate({width:'toggle'},1000);
+		$(this).fadeOut();
+		$('#hide4').fadeIn();
+		$( '#webOverviewHtml' ).attr( 'src', function ( i, val ) { return val; });
+		$("input#searchOverview").val('');
+	});
+
+	$('#hide5').click(function(){
+		$('#searchBrowser').animate({width:'toggle'},1000);
+		$(this).fadeOut();
+		$('#show5').fadeIn();
+	});
+
+	$('#show5').click(function(){
+		$('#searchBrowser').animate({width:'toggle'},1000);
+		$(this).fadeOut();
+		$('#hide5').fadeIn();
+		$( '#webBrowserHtml' ).attr( 'src', function ( i, val ) { return val; });
+		$("input#searchBrowser").val('');
+	});
+
+	$('#hide6').click(function(){
+		$('#searchSearch').animate({width:'toggle'},1000);
+		$(this).fadeOut();
+		$('#show6').fadeIn();
+	});
+
+	$('#show6').click(function(){
+		$('#searchSearch').animate({width:'toggle'},1000);
+		$(this).fadeOut();
+		$('#hide6').fadeIn();
+		$( '#webSearchHtml' ).attr( 'src', function ( i, val ) { return val; });
+		$("input#searchSearch").val('');
+	});
+	
+	$('#hide7').click(function(){
+		$('#searchResult').animate({width:'toggle'},1000);
+		$(this).fadeOut();
+		$('#show7').fadeIn();
+	});
+
+	$('#show7').click(function(){
+		$('#searchResult').animate({width:'toggle'},1000);
+		$(this).fadeOut();
+		$('#hide7').fadeIn();
+		$( '#webResultHtml' ).attr( 'src', function ( i, val ) { return val; });
+		$("input#searchResult").val('');
+	});
+
+	$('#hide8').click(function(){
+		$('#searchMarket').animate({width:'toggle'},1000);
+		$(this).fadeOut();
+		$('#show8').fadeIn();
+	});
+
+	$('#show8').click(function(){
+		$('#searchMarket').animate({width:'toggle'},1000);
+		$(this).fadeOut();
+		$('#hide8').fadeIn();
+		$( '#webMarketHtml' ).attr( 'src', function ( i, val ) { return val; });
+		$("input#searchMarket").val('');
+	});
+
+	$('#hide9').click(function(){
+		$('#searchReport').animate({width:'toggle'},1000);
+		$(this).fadeOut();
+		$('#show9').fadeIn();
+	});
+
+	$('#show9').click(function(){
+		$('#searchReport').animate({width:'toggle'},1000);
+		$(this).fadeOut();
+		$('#hide9').fadeIn();
+		$( '#webReportHtml' ).attr( 'src', function ( i, val ) { return val; });
+		$("input#searchReport").val('');
+	});
+
+	$('#hide10').click(function(){
+		$('#searchMailing').animate({width:'toggle'},1000);
+		$(this).fadeOut();
+		$('#show10').fadeIn();
+	});
+
+	$('#show10').click(function(){
+		$('#searchMailing').animate({width:'toggle'},1000);
+		$(this).fadeOut();
+		$('#hide10').fadeIn();
+		$( '#webMailingHtml' ).attr( 'src', function ( i, val ) { return val; });
+		$("input#searchMailing").val('');
+	});
+
+	$('#hide11').click(function(){
+		$('#searchSetting').animate({width:'toggle'},1000);
+		$(this).fadeOut();
+		$('#show11').fadeIn();
+	});
+
+	$('#show11').click(function(){
+		$('#searchSetting').animate({width:'toggle'},1000);
+		$(this).fadeOut();
+		$('#hide11').fadeIn();
+		$( '#webSettingsHtml' ).attr( 'src', function ( i, val ) { return val; });
+		$("input#searchSetting").val('');
+	});
+
+	$('#hide12').click(function(){
+		$('#searchFollow').animate({width:'toggle'},1000);
+		$(this).fadeOut();
+		$('#show12').fadeIn();
+	});
+
+	$('#show12').click(function(){
+		$('#searchFollow').animate({width:'toggle'},1000);
+		$(this).fadeOut();
+		$('#hide12').fadeIn();
+		$( '#webFollowupHtml' ).attr( 'src', function ( i, val ) { return val; });
+		$("input#searchFollow").val('');
+	});
+
+	$('#hide15').click(function(){
+		$('#searchWebinar').animate({width:'toggle'},1000);
+		$(this).fadeOut();
+		$('#show15').fadeIn();
+	});
+
+	$('#show15').click(function(){
+		$('#searchWebinar').animate({width:'toggle'},1000);
+		$(this).fadeOut();
+		$('#hide15').fadeIn();
+		$( '#webWebinarHtml' ).attr( 'src', function ( i, val ) { return val; });
+		$("input#searchWebinar").val('');
+	});
+	
+				
+    $('#sendButton').bind('click', function (e) {
+		
+		var posY = e.clientY+e.currentTarget.clientHeight;	
+        		
+				if  ($('#loginEmail').val().length == ""){
+					   $("#both p")
+						.text("Empty Fields")
+						.parent().popup( "open", { y: posY } );
+					   return false;
+					   
+				}
+				
+				if  ($('#loginPass').val().length == ""){
+					   $("#both p")
+						.text("Empty Password")
+						.parent().popup( "open", { y: posY } );
+					   return false;
+					   
+				}
+					  
+									
+				$.ajax({
+					type: 'POST',
+				    dataType: "json",
+					url: 'http://aoreiamobile.aoreia.com/resources/php/loginverify.php',
+					data: 'loginEmail=' + $('#loginEmail').val() + '&loginPass=' + $('#loginPass').val(),
+					success:function(msj){
+						//alert(msj.success+"|"+msj.error);							
+						if ( msj.success ){
+							
+							//otro ajax
+							$.ajax({
+								type: 'POST',
+								dataType: "json",
+								url: 'http://aoreiamobile.aoreia.com/properties_validacion.php',
+								data: 'loginEmail=' + $('#loginEmail').val() + '&loginPass=' + $('#loginPass').val(),
+								success:function(msj){
+									//alert(msj.success+"|"+msj.error);							
+									if ( msj.success ){
+									
+									$.mobile.changePage("#home")
+									//alert('aqui');
+									
+									}
+									else{
+										
+									}
+								},
+								error:function(){
+									
+								}
+							});	
+						
+						
+						}
+						else{
+							
+						}
+					},
+					error:function(){
+						
+					}
+				});		
+							
+		});//$('#sendButton').bind('click', function ()
+		
+		$('#sendButton1').bind('click', function (e) {
+		
+		var posY = e.clientY+e.currentTarget.clientHeight;	
+        		
+				if  ($('#fullName').val().length == ""){
+					   $("#both p")
+						.text("Empty Fields")
+						.parent().popup( "open", { y: posY } );
+					   return false;
+					   
+				}
+				
+				if  ($('#userName').val().length == ""){
+					   $("#both p")
+						.text("Empty Fields")
+						.parent().popup( "open", { y: posY } );
+					   return false;
+					   
+				}
+				
+				if  ($('#registerEmail').val().length == ""){
+					   $("#both p")
+						.text("Empty Fields")
+						.parent().popup( "open", { y: posY } );
+					   return false;
+					   
+				}
+				
+				if  ($('#registerPass').val().length == ""){
+					   $("#both p")
+						.text("Empty Password")
+						.parent().popup( "open", { y: posY } );
+					   return false;
+					   
+				}
+					  
+									
+				$.ajax({
+					type: 'POST',
+				    dataType: "json",
+					url: 'http://aoreiamobile.aoreia.com/resources/php/loginverify.php',
+					data: 'loginEmail=' + $('#loginEmail').val() + '&loginPass=' + $('#loginPass').val(),
+					success:function(msj){
+						//alert(msj.success+"|"+msj.error);							
+						if ( msj.success ){
+							
+						$.mobile.changePage("#home")	
+												
+						}
+						else{
+							
+						}
+					},
+					error:function(){
+						
+					}
+				});		
+							
+		});//$('#sendButton').bind('click', function ()
+		
+       
+});
+
+
+	
+</script>
 
 <script type="text/javascript" src="cordova.js"></script>
 
