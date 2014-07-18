@@ -77,17 +77,17 @@
   <gap:splash src="resources/image/logoH_768.png"  gap:platform="ios"     width="1024" height="768" />
 
 
-  <gap:plugin name="org.apache.cordova.media" />	
+  <gap:plugin name="org.apache.cordova.media" version="0.2.8"/>	
 
   <gap:plugin name="com.boyvanderlaak.cordova.plugin.orientationchanger" version="0.1.1" />
   
-  <gap:plugin name="org.apache.cordova.inappbrowser" version="0.2.4" />
+  <gap:plugin name="org.apache.cordova.inappbrowser" version="0.3.3" />
   
   <gap:plugin name="io.github.pwlin.cordova.plugins.fileopener" version="1.0.1" />
   
   <gap:plugin name="org.apache.cordova.dialogs" version="0.2.6" />
   
-  <gap:plugin name="org.apache.cordova.splashscreen" />
+  <gap:plugin name="org.apache.cordova.splashscreen" version="0.2.7"/>
   
   <!-- only ios -->
   <gap:config-file platform="ios" parent="UISupportedInterfaceOrientations~ipad" overwrite="true">
