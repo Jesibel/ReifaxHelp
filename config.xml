@@ -37,7 +37,7 @@
   
 
   
-  <preference name="stay-in-webview" value="true" /> 
+  
  
   <!-- Define app icon for each platform. -->
   <icon src="resources/image/ReiFax_Help_logo-120.png"/>
