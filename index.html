@@ -28,15 +28,7 @@
 		
 		function _onDeviceReady (){	
 			
-			$(document).on("online", onlineFunc); 
-			$(document).on("offline", offlineFunc); 
-				if(!(navigator.connection.type === Connection.UNKNOWN && navigator.connection.type === Connection.NONE)) 
-				{ 
-					$(document).trigger("online"); 
-				} else 
-				{ 
-					$(document).trigger("offline"); 
-				}
+			
 			
 			$(document).on("pagecontainerhide", function (e, ui) {
 				if(video_play){
