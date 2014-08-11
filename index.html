@@ -41,7 +41,7 @@
 			$(document).on('pagebeforeshow', function() {
 				activePage = $.mobile.activePage.attr('id');
 				
-				var status = navigator.onLine ? 'online' : 'offline';
+				var status = navigator.onLine ? 'online' : 'offline Please check your internet connection and try again';
 				alert(status); 
 				
 			});
