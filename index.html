@@ -41,8 +41,12 @@
 			$(document).on('pagebeforeshow', function() {
 				activePage = $.mobile.activePage.attr('id');
 				
-				var status = navigator.onLine ? 'online' : 'offline Please check your internet connection and try again';
-				alert(status); 
+				//var status = navigator.onLine ? 'online' : 'offline Please check your internet connection and try again';
+				//alert(status); 
+				var online = window.navigator.onLine;
+				if (!online) {
+					alert('Please check your internet connection and try again.');
+				}
 				
 			});
 			
@@ -435,14 +439,7 @@
 </head>
 <body overflow:hidden;">
 
-
-<div id="xLOG"></div>
-
-<div data-role="page" data-theme="b" id="splash" style="background-color: #fff;"> 
-    <div class="splash">
-        <img src="resources/img/logo_aoreia.png" alt="splash" />
-    </div>
-</div> 
+ 
 
 <div data-role="page" id="inicio" style="background:#fff;" class="hei" > 
 	
