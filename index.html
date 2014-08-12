@@ -96,22 +96,22 @@
         }
 		
 		function detectInternet(){
-		
+		var conn = true;
 			 /*$ . ajax ({ 
                       url :  "http://reifaxhelper.booleam.com" , 
                       context : document . body , 
                       error :  function ( jqXHR , exception )  { alert ( 'offline' )}, 
                       success :  function (){ alert ( 'ONline' )} 
                     })*/
-			function checkConnection() {
+		
     	    $.ajax({
   			url: 'http://reifaxhelper.booleam.com/process.php',
   			async: false,
   			data: {'tag' : 'connection'}
-  		})
-  		.fail(function() { conn = false; })
-  		.done(function() { conn = true; })
-  }		
+  		    })
+  		   .fail(function() { conn = false; })
+  		   .done(function() { conn = true; })
+  		
 		
 		}
 		
