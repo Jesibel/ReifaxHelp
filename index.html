@@ -97,20 +97,20 @@
 		
 		function detectInternet(){
 		var conn = true;
-			 /*$ . ajax ({ 
+			 $ . ajax ({ 
                       url :  "http://reifaxhelper.booleam.com" , 
-                      context : document . body , 
+                      context : document.body , 
                       error :  function ( jqXHR , exception )  { alert ( 'offline' )}, 
                       success :  function (){ alert ( 'ONline' )} 
-                    })*/
+                    })
 		
-    	    $.ajax({
+    	    /*$.ajax({
   			url: 'http://reifaxhelper.booleam.com/process.php',
   			async: false,
   			data: {'tag' : 'connection'}
   		    })
   		   .fail(function() { conn = false; })
-  		   .done(function() { conn = true; })
+  		   .done(function() { conn = true; })*/
   		
 		
 		}
