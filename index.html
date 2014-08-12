@@ -26,7 +26,7 @@
 		
 		function _onDeviceReady (){	
 			
-			setinterval(detectInternet(),2500);
+			setinterval('detectInternet()',2500);
 			
 			$(document).on("pagecontainerhide", function (e, ui) {
 				if(video_play){
@@ -98,7 +98,7 @@
 		function detectInternet(){
 		
 			 $ . ajax ({ 
-                      url :  "http://reifaxhelp.booleam.com" , 
+                      url :  "http://reifaxhelper.booleam.com" , 
                       context : document . body , 
                       error :  function ( jqXHR , exception )  { alert ( 'offline' )}, 
                       success :  function (){ alert ( 'ONline' )} 
