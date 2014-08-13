@@ -102,6 +102,7 @@
 		function detectInternet(){
 		
 			var url='http://reifaxhelper.booleam.com';
+			var resp = false;
 		
 			$.ajax({
 				url: url,
@@ -110,7 +111,15 @@
 				success: function (data) {
 					// Yor success logic 
 						alert('success bien');
-				},
+						alert(data);
+						 if(data == "yes")
+						{
+							resp = false;
+						}
+						if(data == "no"){
+							resp = true;
+						}
+						},
 				error: function (request) {
 					 alert(request.responseText);
 					 alert(request.status);
@@ -120,6 +129,8 @@
 					}
 				}
 			});
+			
+			return data;
 		
 		/*var conn = true;
 			 $ . ajax ({ 
@@ -927,7 +938,7 @@
 	<div data-role="content" class="ui-content ui-body-noPadding">	
 			<iframe  allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" frameborder = 0
 					id="webHomepageHtml" class="iframeRender" style="width:100%; border:0 solid white;" 
-					src="javascript:iframe();">
+					src="javascript:abrir()">
 				<html>
 					<head></head>
 					<body></body>
@@ -2155,7 +2166,7 @@
         navigator.app.exitApp();
     }
 	
-	function iframe(){
+	function abrir(){
 		    var dir = "http://reifaxhelper.booleam.com/homePage.php";
 			alert(detectInternet());
 			if (detectInternet()==0){
