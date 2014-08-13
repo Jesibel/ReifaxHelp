@@ -111,17 +111,11 @@
 				success: function (data) {
 					// Yor success logic 
 						alert('success bien');
-						alert(data);
-						 if(data == "yes")
-						{
-							resp = false;
-						}
-						if(data == "no"){
-							resp = true;
-						}
-						},
+						resp:true;
+				},
 				error: function (request) {
-					 alert(request.responseText);
+					resp=false;
+					 //alert(request.responseText);
 					 alert(request.status);
 					if(request.status==0)
 					{
@@ -130,7 +124,7 @@
 				}
 			});
 			
-			return data;
+			return resp;
 		
 		/*var conn = true;
 			 $ . ajax ({ 
@@ -2168,13 +2162,13 @@
 	
 	function abrir(){
 		    var dir = "http://reifaxhelper.booleam.com/homePage.php";
-			alert(detectInternet());
-			if (detectInternet()==0){
+			
+			if (!detectInternet()){
 				alert("Please connect to the internet");
 			}else{
             return dir
 			}
-		}
+	}
 	
 $(document).ready(function () {
 
