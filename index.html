@@ -145,14 +145,15 @@
 		
 		}
 		
-		function abrir(){
+		function frame(){
 		    var dir = "http://reifaxhelper.booleam.com/homePage.php";
 			
 			var online = navigator.onLine
 				if (!online) {
 					alert('Please check your internet connection and try again.');
 				}else{
-					window.open("http://reifaxhelper.booleam.com/homePage.php","_self")
+					window.open("http://reifaxhelper.booleam.com/homePage.php","_self");
+					return dir;
 				}				
 			/*var nada='';
 			
@@ -164,7 +165,7 @@
 			}*/
 		}
 		
-		function frame(){
+		function dir(){
 		
 			return "http://reifaxhelper.booleam.com/homePage.php";
 		
