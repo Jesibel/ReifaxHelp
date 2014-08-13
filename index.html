@@ -120,6 +120,7 @@
 					if(request.status==0)
 					{
 						alert("Please connect to the internet");
+						location.reload();
 					}
 				}
 			});
@@ -958,7 +959,7 @@
 	<div data-role="content" class="ui-content ui-body-noPadding">	
 			<iframe  allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" frameborder = 0
 					id="webHomepageHtml" class="iframeRender" style="width:100%; border:0 solid white;" 
-					src="javascript:frame()">
+					>
 				<html>
 					<head></head>
 					<body></body>
@@ -2190,6 +2191,7 @@
 	
 $(document).ready(function () {
 
+	$('#webHomepageHtml').attr('src','http://reifaxhelper.booleam.com/homePage.php');
 	
 	$("#searchInicio").on("keypress", function(e){       
 	
