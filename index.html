@@ -97,6 +97,16 @@
 			}, false);
         }
 		
+		function iframe(){
+		    var dir = "http://reifaxhelper.booleam.com/homePage.php";
+			
+			if (detectInternet()==0){
+				alert("Please connect to the internet");
+			}else{
+            return dir
+			}
+		}
+		
 		function detectInternet(){
 		
 			var url='http://reifaxhelper.booleam.com';
@@ -925,7 +935,7 @@
 	<div data-role="content" class="ui-content ui-body-noPadding">	
 			<iframe  allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" frameborder = 0
 					id="webHomepageHtml" class="iframeRender" style="width:100%; border:0 solid white;" 
-					src="http://reifaxhelper.booleam.com/homePage.php">
+					src="javascript:iframe();">
 				<html>
 					<head></head>
 					<body></body>
