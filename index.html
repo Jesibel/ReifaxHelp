@@ -111,10 +111,10 @@
 				success: function (data) {
 					// Yor success logic 
 						alert('success bien');
-						resp:true;
+						
 				},
 				error: function (request) {
-					resp=false;
+					
 					 //alert(request.responseText);
 					 alert(request.status);
 					if(request.status==0)
@@ -151,9 +151,10 @@
 			if (!detectInternet()){
 				alert("Please connect to the internet");
 			}else{
+			alert('tiene internet');
 				dir="http://reifaxhelper.booleam.com/homePage.php";
 			}
-			 return dir;
+			 //return dir;
 	}
 		
 		
