@@ -96,13 +96,34 @@
         }
 		
 		function detectInternet(){
-		var conn = true;
+		
+			var url='http://reifaxhelper.booleam.com';
+		
+			$.ajax({
+				url: url,
+				type: 'GET',
+				contentType: "application/json;charset=utf-8",
+				success: function (data) {
+					// Yor success logic 
+						alert('success bien');
+				},
+				error: function (request) {
+					// alert(request.responseText);
+					// alert(request.status);
+					if(request.status==0)
+					{
+						alert("Please connect to the internet");
+					}
+				}
+			});
+		
+		/*var conn = true;
 			 $ . ajax ({ 
                       url :  "http://reifaxhelper.booleam.com" , 
                       context : document.body , 
                       error :  function ( jqXHR , exception )  { alert ( 'offline' )}, 
                       success :  function (){ alert ( 'ONline' )} 
-                    })
+                    })*/
 		
     	    /*$.ajax({
   			url: 'http://reifaxhelper.booleam.com/process.php',
