@@ -30,6 +30,7 @@
 			var id = setInterval("detectInternet()",1000);
 			setTimeout("clearInterval("+id+")",1000);
 			
+			
 			$(document).on("pagecontainerhide", function (e, ui) {
 				if(video_play){
 				    if (WURFL.form_factor != "Tablet") {
@@ -111,14 +112,7 @@
 				success: function (data) {
 					// Yor success logic 
 						alert('success bien');
-						alert(data);
-						 if(data == "yes")
-						{
-							resp = false;
-						}
-						if(data == "no"){
-							resp = true;
-						}
+						
 						},
 				error: function (request) {
 					 alert(request.responseText);
@@ -153,12 +147,21 @@
 		
 		function abrir(){
 		    var dir = "http://reifaxhelper.booleam.com/homePage.php";
-			alert(detectInternet());
+			
+			var online = navigator.onLine
+				if (!online) {
+					alert('Please check your internet connection and try again.');
+				}else{
+					window.open("http://reifaxhelper.booleam.com/homePage.php","_self")
+				}				
+			/*var nada='';
+			
 			if (detectInternet()==0){
 				alert("connect internet");
+				return nada;
 			}else{
-            return dir;
-			}
+				return dir;
+			}*/
 		}
 		
 		
