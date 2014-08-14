@@ -27,8 +27,8 @@
 		function _onDeviceReady (){	
 			
 			//setinterval("detectInternet()",2500);
-			/*var id = setInterval("detectInternet()",1000);
-			setTimeout("clearInterval("+id+")",15000);*/
+			var id = setInterval("detectInternet()",1000);
+			setTimeout("clearInterval("+id+")",15000);
 			
 			
 			$(document).on("pagecontainerhide", function (e, ui) {
@@ -120,7 +120,7 @@
 					if(request.status==0)
 					{
 						alert("Please connect to the internet");
-						location.reload();
+						//location.reload();
 					}
 				}
 			});
