@@ -32,6 +32,10 @@
    <feature name="NetworkStatus">
     <param name="android-package" value="org.apache.cordova.NetworkManager" />
    </feature>
+   
+   <feature name="NetworkStatus">
+    <param name="ios-package" value="CDVConnection" />
+   </feature>
  
   <content src="index.html" />
 
