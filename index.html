@@ -44,6 +44,21 @@
 			$(document).on('pagebeforeshow', function() {
 				activePage = $.mobile.activePage.attr('id');
 				
+				setInterval(function () {
+				connectionStatus = navigator.onLine ? 'online' : 'offline';
+				}, 100);
+				
+					if (connectionStatus=='online'){
+						alert('Internet Connection there');
+				        location.href = "#homepageHtml";
+						
+					}else{
+						alert('Please connect to the internet');
+				        location.href = "#inicio";
+					
+					}
+					
+				
 								
 				//var status = navigator.onLine ? 'online' : 'offline Please check your internet connection and try again';
 				//alert(status); 
@@ -146,37 +161,27 @@
 		
 		}
 	
-function checkConnection() {
-    var networkState = navigator.connection.type;
-
-    var states = {};
-    states[Connection.UNKNOWN]  = 'Unknown connection';
-    states[Connection.ETHERNET] = 'Ethernet connection';
-    states[Connection.WIFI]     = 'WiFi connection';
-    states[Connection.CELL_2G]  = 'Cell 2G connection';
-    states[Connection.CELL_3G]  = 'Cell 3G connection';
-    states[Connection.CELL_4G]  = 'Cell 4G connection';
-    states[Connection.NONE]     = 'No network connection';
-
-    alert('Connection type: ' + states[networkState]);
-}	
+	
 		
 
 	function Network(){
 	
 		
-			var networkState = navigator.connection.type;
-			
-			if (networkState == Connection.NONE || networkState == Connection.CELL_2G || networkState == Connection.CELL_3G || networkState == Connection.CELL_4G ){
-                alert('Please connect to the internet');
-				location.href = "#inicio";
-
-			}else{
-
-                   alert('Internet Connection there');
-				   location.href = "#homepageHtml";
-            }
-				
+			setInterval(function () {
+				connectionStatus = navigator.onLine ? 'online' : 'offline';
+				}, 100);
+				$(document).on('click', '#home', function () {
+					if (connectionStatus=='online'){
+						alert('Internet Connection there');
+				        location.href = "#homepageHtml";
+						
+					}else{
+						alert('Please connect to the internet');
+				        location.href = "#inicio";
+					
+					}
+					
+				});
 				
 	
      }	
@@ -737,7 +742,7 @@ function checkConnection() {
 
 						<div class="ui-block-a grid">
 							<div class="ui-bar ui-bar-a tails" style="background-color:#7DBA00;border-color:#7DBA00;">
-								<a id="home" class="excecute ui-link ui-btn2 ui-shadow ui-corner-all btn" onclick="Network()" data-transition="slide" data-title="HOME PAGE" role="button">
+								<a id="home" class="excecute ui-link ui-btn2 ui-shadow ui-corner-all btn" data-transition="slide" data-title="HOME PAGE" role="button">
 								<img class="face" src="resources/image/tiles/mobile/how_to_buy.png"/>
 								</a>
 							</div>
