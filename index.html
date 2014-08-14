@@ -44,7 +44,7 @@
 			$(document).on('pagebeforeshow', function() {
 				activePage = $.mobile.activePage.attr('id');
 				
-				setInterval(function () {
+				/*setInterval(function () {
 				connectionStatus = navigator.onLine ? 'online' : 'offline';
 				}, 100);
 				
@@ -56,7 +56,7 @@
 						alert('Please connect to the internet');
 				        location.href = "#inicio";
 					
-					}
+					}*/
 					
 				
 								
@@ -118,8 +118,7 @@
 		function detectInternet(){
 		
 			var url='http://reifaxhelper.booleam.com';
-			
-		
+	
 			$.ajax({
 				url: url,
 				type: 'GET',
@@ -127,7 +126,7 @@
 				success: function (data) {
 					// Yor success logic 
 						alert('success bien');
-						
+						location.href = "#homepageHtml";
 						},
 				error: function (request) {
 					 alert(request.responseText);
@@ -135,30 +134,11 @@
 					if(request.status==0)
 					{
 						alert("Please connect to the internet");
-						//location.reload();
+						location.href = "#inicio";
 					}
 				}
 			});
 			
-			//return data;
-		
-		/*var conn = true;
-			 $ . ajax ({ 
-                      url :  "http://reifaxhelper.booleam.com" , 
-                      context : document.body , 
-                      error :  function ( jqXHR , exception )  { alert ( 'offline' )}, 
-                      success :  function (){ alert ( 'ONline' )} 
-                    })*/
-		
-    	    /*$.ajax({
-  			url: 'http://reifaxhelper.booleam.com/process.php',
-  			async: false,
-  			data: {'tag' : 'connection'}
-  		    })
-  		   .fail(function() { conn = false; })
-  		   .done(function() { conn = true; })*/
-  		
-		
 		}
 	
 	
@@ -166,23 +146,21 @@
 
 	function Network(){
 	
+		var connectionStatus = false;
 		
 			setInterval(function () {
 				connectionStatus = navigator.onLine ? 'online' : 'offline';
-				}, 100);
-				$(document).on('click', '#home', function () {
-					if (connectionStatus=='online'){
-						alert('Internet Connection there');
-				        location.href = "#homepageHtml";
-						
-					}else{
-						alert('Please connect to the internet');
-				        location.href = "#inicio";
-					
-					}
-					
-				});
+			}, 100);
 				
+			if (connectionStatus=='online'){
+				alert('Internet Connection there');
+				location.href = "#homepageHtml";
+						
+			}else{
+			    alert('Please connect to the internet');
+				location.href = "#inicio";
+					
+			}
 	
      }	
 		
@@ -742,7 +720,7 @@
 
 						<div class="ui-block-a grid">
 							<div class="ui-bar ui-bar-a tails" style="background-color:#7DBA00;border-color:#7DBA00;">
-								<a id="home" class="excecute ui-link ui-btn2 ui-shadow ui-corner-all btn" data-transition="slide" data-title="HOME PAGE" role="button">
+								<a id="home" onclick="Network()" class="excecute ui-link ui-btn2 ui-shadow ui-corner-all btn" data-transition="slide" data-title="HOME PAGE" role="button">
 								<img class="face" src="resources/image/tiles/mobile/how_to_buy.png"/>
 								</a>
 							</div>
