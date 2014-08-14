@@ -22,23 +22,9 @@
    <feature name="http://api.phonegap.com/1.0/file"/>
    <feature name="http://api.phonegap.com/1.0/notification"/>
    
-   <feature name="Device">
-        <param name="android-package" value="org.apache.cordova.device.Device" />
-   </feature>
+
    
-   <feature name="Device">
-        <param name="ios-package" value="CDVDevice" />
-   </feature>
-   
-   <feature name="NetworkStatus">
-    <param name="android-package" value="org.apache.cordova.NetworkManager" />
-   </feature>
-   
-   <feature name="NetworkStatus">
-    <param name="ios-package" value="CDVConnection" />
-   </feature>
-   
-   
+  <gap:plugin name="NetworkStatus" value="org.apache.cordova.NetworkManager" />	
  
   <content src="index.html" />
 
