@@ -145,32 +145,18 @@
   		
 		
 		}
-		
-		function frame(){
-		    var dir = "http://reifaxhelper.booleam.com/homePage.php";
-			
-			var online = navigator.onLine
-				if (!online) {
-					alert('Please check your internet connection and try again.');
-				}else{
-					//window.open("http://reifaxhelper.booleam.com/homePage.php","_self");
-					return dir;
-				}				
-			/*var nada='';
-			
-			if (detectInternet()==0){
-				alert("connect internet");
-				return nada;
-			}else{
-				return dir;
-			}*/
-		}
-		
-		function dir(){
-		
-			return "http://reifaxhelper.booleam.com/homePage.php";
-		
-		}
+	
+function Network(){
+        if(navigator.onLine)
+            {
+              alert('You are Online');
+			  location.href = "#homepageHtml";
+            }
+        else
+            {
+              alert('Please connect to the internet')
+            }
+     }
 		
 		
 	function noscreen() {
@@ -729,7 +715,7 @@
 
 						<div class="ui-block-a grid">
 							<div class="ui-bar ui-bar-a tails" style="background-color:#7DBA00;border-color:#7DBA00;">
-								<a class="excecute ui-link ui-btn2 ui-shadow ui-corner-all btn" href="#homepageHtml" data-transition="slide" data-title="HOME PAGE" role="button">
+								<a id="home" class="excecute ui-link ui-btn2 ui-shadow ui-corner-all btn" onclick="Network()" data-transition="slide" data-title="HOME PAGE" role="button">
 								<img class="face" src="resources/image/tiles/mobile/how_to_buy.png"/>
 								</a>
 							</div>
