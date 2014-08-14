@@ -146,24 +146,7 @@
 		
 		}
 		
-	function onOnline(){ $.varConex = true; }
-    function onOffline(){ $.varConex = false; }
-	
-function Network(){
-	
-		if (!$.varConex)
-            {
-              alert('You are Online');
-			  location.href = "#homepageHtml";
-            }
-        else
-            {
-              alert('Please connect to the internet');
-			  location.href = "#inicio";
-            }
-			
-	
-     }
+
 		
 		
 	function noscreen() {
@@ -2902,18 +2885,29 @@ $('#formulario').submit(function() {
 			
    }, false);
    
+    var $.varConex=true;
     document.addEventListener("online", onOnline, false);
     document.addEventListener("offline", onOffline, false);
 	
 	function onOnline(){ $.varConex = true; }
     function onOffline(){ $.varConex = false; }
 	
-	$('body').on('click', ".btnCinema", function(e) {
-            if ($.varConex){
-            // some code
-            } else {
-            // some code
+		
+	function Network(){
+	
+		if ($.varConex)
+            {
+              alert('You are Online');
+			  location.href = "#homepageHtml";
             }
+        else
+            {
+              alert('Please connect to the internet');
+			  location.href = "#inicio";
+            }
+			
+	
+     }
      
 </script>
 
