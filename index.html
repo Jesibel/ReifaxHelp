@@ -145,9 +145,39 @@
   		
 		
 		}
+	
+function checkConnection() {
+    var networkState = navigator.connection.type;
+
+    var states = {};
+    states[Connection.UNKNOWN]  = 'Unknown connection';
+    states[Connection.ETHERNET] = 'Ethernet connection';
+    states[Connection.WIFI]     = 'WiFi connection';
+    states[Connection.CELL_2G]  = 'Cell 2G connection';
+    states[Connection.CELL_3G]  = 'Cell 3G connection';
+    states[Connection.CELL_4G]  = 'Cell 4G connection';
+    states[Connection.NONE]     = 'No network connection';
+
+    alert('Connection type: ' + states[networkState]);
+}	
 		
 
+	function Network(){
+	
 		
+			if (checkConnection()) {
+				
+				alert('You are Online');
+				location.href = "#homepageHtml";
+            }
+        else
+            {
+              alert('Please connect to the internet');
+			  location.href = "#inicio";
+            }
+			
+	
+     }	
 		
 	function noscreen() {
 		navigator.splashscreen.hide();
@@ -2893,21 +2923,7 @@ $('#formulario').submit(function() {
     function onOffline(){ $.varConex = false; }
 	
 		
-	function Network(){
 	
-		if ($.varConex)
-            {
-              alert('You are Online');
-			  location.href = "#homepageHtml";
-            }
-        else
-            {
-              alert('Please connect to the internet');
-			  location.href = "#inicio";
-            }
-			
-	
-     }
      
 </script>
 
