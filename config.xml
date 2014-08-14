@@ -22,7 +22,6 @@
    <feature name="http://api.phonegap.com/1.0/file"/>
    <feature name="http://api.phonegap.com/1.0/notification"/>
    
-
  
   <content src="index.html" />
 
@@ -36,9 +35,6 @@
 
   <preference name="SplashScreen" value="splash" />
   <preference name="SplashScreenDelay" value="10000" /> <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
-  
-
-  
   
  
   <!-- Define app icon for each platform. -->
@@ -91,9 +87,6 @@
   
   <gap:plugin name="org.apache.cordova.splashscreen" />
   
-
-  
-
 
   <access origin="http://reifaxhelper.booleam.com" />       
   <access origin="http://reifaxhelper.booleam.com" subdomains="true" /> 
