@@ -145,10 +145,13 @@
   		
 		
 		}
+		
+	function onOnline(){ $.varConex = true; }
+    function onOffline(){ $.varConex = false; }
 	
 function Network(){
-	var online = navigator.onLine
-		if (online)
+	
+		if ($.varconex)
             {
               alert('You are Online');
 			  location.href = "#homepageHtml";
@@ -158,6 +161,8 @@ function Network(){
               alert('Please connect to the internet');
 			  location.href = "#inicio";
             }
+			
+	
      }
 		
 		
@@ -2904,7 +2909,7 @@ $('#formulario').submit(function() {
     function onOffline(){ $.varConex = false; }
 	
 	$('body').on('click', ".btnCinema", function(e) {
-            if ($.varConexao){
+            if ($.varConex){
             // some code
             } else {
             // some code
