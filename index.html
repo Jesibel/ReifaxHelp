@@ -165,17 +165,19 @@ function checkConnection() {
 	function Network(){
 	
 		
-			if (checkConnection()) {
-				
-				alert('You are Online');
-				location.href = "#homepageHtml";
-            }
-        else
-            {
-              alert('Please connect to the internet');
-			  location.href = "#inicio";
-            }
+			var networkState = navigator.connection.type;
 			
+			if (networkState == Connection.NONE || networkState == Connection.CELL_2G || networkState == Connection.CELL_3G || networkState == Connection.CELL_4G ){
+                alert('Please connect to the internet');
+				location.href = "#inicio";
+
+			}else{
+
+                   alert('Internet Connection there');
+				   location.href = "#homepageHtml";
+            }
+				
+				
 	
      }	
 		
