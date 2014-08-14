@@ -147,7 +147,8 @@
 		}
 	
 function Network(){
-        if(navigator.onLine)
+	var online = navigator.onLine
+		if (online)
             {
               alert('You are Online');
 			  location.href = "#homepageHtml";
