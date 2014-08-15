@@ -121,7 +121,7 @@
 			timeout: 3000, 
 			retryAfter:7000
 		});
-
+		var attempts=0;
 		retry = function(param) {
 			attempts++;
 			$.ajax(url).success(function() {
