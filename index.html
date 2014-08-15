@@ -122,15 +122,14 @@
 			retryAfter:7000
 		});
 
-		function retryConnection(param){
-			$.ajax('http://reifaxhelper.booleam.com')
-				.success(function(){
-					console.log('Ajax request worked');
-				})
-				.error(function(){
-					console.log('Ajax request failed...');
-					setTimeout ('retryConnection("'+param+'")', $.ajaxSetup().retryAfter);
-				});
+		retry = function(param) {
+			attempts++;
+			$.ajax(url).success(function() {
+				$('#status').text('#'+attempts+' : Success...');
+			}).error(function() {
+			$('#status').text('#'+attempts+' : Failure... Retry after ' + $.ajaxSetup().retryAfter / 1000 + '  seconds');
+			setTimeout('retry("' + param + '")', $.ajaxSetup().retryAfter);
+			});
 		}
 		
 		function showConfirm() {
@@ -154,7 +153,7 @@
 				//pressed "delete"
 				console.log("connecting");
 				
-				retryConnection();
+				retry;
 			}
 		}
 		
