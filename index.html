@@ -63,8 +63,6 @@
 				        location.href = "#inicio";
 					
 					}*/
-					
-				
 								
 				//var status = navigator.onLine ? 'online' : 'offline Please check your internet connection and try again';
 				//alert(status); 
@@ -128,6 +126,7 @@
 			$.ajax({
 				url: url,
 				type: 'GET',
+				cache : false,
 				contentType: "application/json;charset=utf-8",
 				success: function (data) {
 					// Yor success logic 
