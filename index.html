@@ -117,13 +117,28 @@
 			}, false);
         }
 		
+		
 		function showConfirm() {
 			navigator.notification.confirm(
 				'exit or retry connecting?',  // message
-				exitFromApp,              // callback to invoke with index of button pressed
+				onConfirm,         // callback to invoke with index of button pressed
 				'Exit',            // title
-				'Cancel,OK'         // buttonLabels
+				'Exit,Connect'        // buttonLabels
 			);
+		}
+		
+		function onConfirm(button) {
+			//console.log('You selected button ' + button);
+			if(button == 1){
+				//pressed "cancel"
+				console.log("User has cancelled");
+				//exitFromApp    
+				navigator.app.exitApp();
+			}
+			else if(button == 2){
+				//pressed "delete"
+				console.log("connecting");
+			}
 		}
 		
 		
