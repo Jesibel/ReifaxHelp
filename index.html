@@ -117,7 +117,7 @@
 			}, false);
         }
 		
-		$.ajaxSetup({
+		/*$.ajaxSetup({
 			timeout: 3000, 
 			retryAfter:7000
 		});
@@ -130,7 +130,7 @@
 			$('#status').text('#'+attempts+' : Failure... Retry after ' + $.ajaxSetup().retryAfter / 1000 + '  seconds');
 			setTimeout('retry("' + param + '")', $.ajaxSetup().retryAfter);
 			});
-		}
+		}*/
 		
 		function showConfirm() {
 			navigator.notification.confirm(
@@ -152,8 +152,7 @@
 			else if(button == 2){
 				//pressed "delete"
 				console.log("connecting");
-				
-				retry;
+				detectInternet();
 			}
 		}
 		
