@@ -141,24 +141,7 @@
 				'No,Yes'        // buttonLabels
 			);
 		}
-		
-		function onConfirm(button) {
-			//console.log('You selected button ' + button);
-			if(button == 1){
-				//pressed "cancel"
-				console.log("User has cancelled");
-				//exitFromApp    
-				navigator.app.exitApp();
-			}
-			else if(button == 2){
-				//pressed "delete"
-				console.log("connecting");
-				
-				retryConnection();
-			}
-		}
-		
-		
+
 		function detectInternet(){
 		
 			var url='http://reifaxhelper.booleam.com';
