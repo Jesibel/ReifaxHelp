@@ -122,8 +122,8 @@
 			navigator.notification.confirm(
 				'exit or retry connecting?',  // message
 				onConfirm,         // callback to invoke with index of button pressed
-				'Exit',            // title
-				'Exit,Connect'        // buttonLabels
+				'No Internet Connection',            // title
+				'No,Yes'        // buttonLabels
 			);
 		}
 		
@@ -141,6 +141,23 @@
 			}
 		}
 		
+	function Confirm(){
+		navigator.notification.alert(
+			"There was an error connecting to the Internet. Would you like to retry?.",
+			"No Internet connection",
+			"No",
+			"Yes",
+		{
+        onClose: function(buttonIndex) {
+            if (buttonIndex == 1){
+                retryConnection();
+			}else (buttonIndex == 2){
+				navigator.app.exitApp();
+			}
+        }
+		}
+		);
+		}
 		
 		function detectInternet(){
 		
@@ -162,7 +179,7 @@
 					if(request.status==0)
 					{
 						alert("Please connect to the internet");
-						showConfirm();
+						Confirm();
 						
 					}
 				}
