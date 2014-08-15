@@ -27,7 +27,7 @@
 		
 		function _onDeviceReady (){	
 		
-			$.ajaxSetup({cache: false}); //evitar cache
+			$.ajaxSetup({cache: false,}); //evitar cache
 			
 			//setinterval("detectInternet()",2500);
 			//var id = setInterval("detectInternet()",1000);
@@ -117,6 +117,21 @@
 			}, false);
         }
 		
+		$.ajaxSetup({
+			timeout: 3000, 
+			retryAfter:7000
+		});
+
+		function retryConnection(param){
+			$.ajax('http://reifaxhelper.booleam.com')
+				.success(function(){
+					console.log('Ajax request worked');
+				})
+				.error(function(){
+					console.log('Ajax request failed...');
+					setTimeout ('retryConnection("'+param+'")', $.ajaxSetup().retryAfter);
+				});
+		}
 		
 		function showConfirm() {
 			navigator.notification.confirm(
@@ -138,6 +153,7 @@
 			else if(button == 2){
 				//pressed "delete"
 				console.log("connecting");
+				
 				retryConnection();
 			}
 		}
@@ -164,6 +180,7 @@
 					{
 						alert("Please connect to the internet");
 						showConfirm();
+						
 						
 					}
 				}
