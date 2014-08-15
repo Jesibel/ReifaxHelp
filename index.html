@@ -24,12 +24,18 @@
 		var video_play=false;
 		var activePage;
 		
+		
 		function _onDeviceReady (){	
+		
+			$.ajaxSetup({cache: false}); //evitar cache
 			
 			//setinterval("detectInternet()",2500);
 			//var id = setInterval("detectInternet()",1000);
 			//setTimeout("clearInterval("+id+")",15000);
 			detectInternet();
+			
+			activePage = $.mobile.activePage.attr('id');
+			
 			
 			$(document).on("pagecontainerhide", function (e, ui) {
 				if(video_play){
@@ -2209,7 +2215,8 @@
 	
 	
 $(document).ready(function () {
-	
+
+	$.ajaxSetup({cache: false}); //evitar cache	
 
 	$('#webHomepageHtml').attr('src','http://reifaxhelper.booleam.com/homePage.php');
 	
