@@ -221,20 +221,21 @@
      }
 
 	function abrir(){
+		
+		var id	=	$(this).attr('#id');
 		alert('home');
         detectInternet();
 		
-		if ("#home"){
+		/*if ("#home"){
 		$.mobile.changePage("#homepageHtml");
-		}
+		}*/
 		
-		else if ("#webi"){
-		$.mobile.changePage("#webinarHtml");
-		}
-		
-		else if ("#basic"){
-		$.mobile.changePage("#basicHtml");
-		}
+		$.mobile.changePage( id, { transition: "slidedown"});
+					if(globals.execFirstTime==0){
+						globals.execFirstTime	=	1;
+						//$("#webPage").attr("src",$(this).data("src"));
+						alert('dentro');
+					}
 		
 		
 		//alert('page');
