@@ -2256,10 +2256,12 @@ $(document).ready(function () {
 
 	$.ajaxSetup({cache: false}); //evitar cache	
 	
-	$("#tile a").click(function() {
+	$("#tiles a").click(function() {
 		detectInternet();
+		alert( $('#tiles img').index(this) );
 		
 		var home = $("a#home").val();
+		alert(home);
 		if (home!=""){
 			$.mobile.changePage("#homepageHtml");
 		}
