@@ -226,10 +226,15 @@
 		alert('home');
         detectInternet();
 		
-		/*if ("#home"){
+		if ("#home").bind("click",function(e){
 		$.mobile.changePage("#homepageHtml");
-		}*/
-		case "Home":
+		});
+
+		if ("#webi").bind("click",function(e){{
+		$.mobile.changePage("#webinarHtml");
+		});
+		
+		/*case "Home":
 			$.mobile.changePage("#homepageHtml");
 		break;
 		case "Webi":
@@ -237,7 +242,7 @@
 		break;
 		case "Basic":
 			$.mobile.changePage("#basicHtml");
-		break;
+		break;*/
 		
 		
 		//alert('page');
@@ -631,21 +636,21 @@
 					<div class="ui-grid-b nada">
 						<div class="ui-block-c grid">
 							<div class="ui-bar ui-bar-a tails" style="background-color:#7DBA00;border-color:#7DBA00;">
-								<a class="ui-link ui-btn2 ui-shadow ui-corner-all btn" id="home" onclick="abrir()" data-excecute="Home" data-transition="slide" data-title="HOME PAGE" role="button">
+								<a class="ui-link ui-btn2 ui-shadow ui-corner-all btn" id="home" onclick="abrir()"  data-transition="slide" data-title="HOME PAGE" role="button">
 								<img src="resources/image/tiles/tablet/how_to_buy.png"/>								
 								</a>
 							</div>
 						</div>	
 						<div class="ui-block-c grid">
 							<div class="ui-bar ui-bar-a tails" style="background-color:#7DBA00;border-color:#7DBA00;">
-								<a class="ui-link ui-btn2 ui-shadow ui-corner-all btn" id="webi" onclick="abrir()" data-excecute="Webi"data-transition="slide" data-title="WEBINARS" role="button">
+								<a class="ui-link ui-btn2 ui-shadow ui-corner-all btn" id="webi" onclick="abrir()"  data-transition="slide" data-title="WEBINARS" role="button">
 									<img src="resources/image/tiles/tablet/webinars.png"/>
 								</a>
 							</div>					
 						</div>						
 						<div class="ui-block-c grid">
 							<div class="ui-bar ui-bar-a tails" style="background-color:#7DBA00;border-color:#7DBA00;">
-								<a class="ui-link ui-btn2 ui-shadow ui-corner-all btn" id="basic" onclick="abrir()" data-excecute="Basic" data-transition="slide" data-title="BASIC CONCEPTS" role="button">
+								<a class="ui-link ui-btn2 ui-shadow ui-corner-all btn" id="basic" onclick="abrir()" data-transition="slide" data-title="BASIC CONCEPTS" role="button">
 								<img src="resources/image/tiles/tablet/basic_concepts.png"/>								
 								</a>
 							</div>
