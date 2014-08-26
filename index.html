@@ -238,9 +238,12 @@
      }
 
 	function abrir(){
-	alert('home');
-       detectInternet();
-		$('#webHomepageHtml').attr('src','http://reifaxhelper.booleam.com/homePage.php');
+		alert('home');
+        detectInternet();
+		$('#homepageHtml').on('pageshow', function(event, ui) {
+			$('#webHomepageHtml').attr('src','http://reifaxhelper.booleam.com/homePage.php');
+		});
+		
     }	 
 		
 	function noscreen() {
