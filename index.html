@@ -622,7 +622,7 @@
 					<div class="ui-grid-b nada">
 						<div class="ui-block-c grid">
 							<div class="ui-bar ui-bar-a tails" style="background-color:#7DBA00;border-color:#7DBA00;">
-								<a class="ui-link ui-btn2 ui-shadow ui-corner-all btn" href="#homepageHtml" data-transition="slide" data-title="HOME PAGE" role="button">
+								<a class="ui-link ui-btn2 ui-shadow ui-corner-all btn" onclick="javascript:fun_iFrameWrite()" data-transition="slide" data-title="HOME PAGE" role="button">
 								<img src="resources/image/tiles/tablet/how_to_buy.png"/>								
 								</a>
 							</div>
@@ -2251,15 +2251,22 @@
         navigator.app.exitApp();
     }
 	
+	function fun_iFrameWrite(){
+       detectInternet();
+		$('#webHomepageHtml').attr('src','http://reifaxhelper.booleam.com/homePage.php');
+    }
 	
 	
 $(document).ready(function () {
 
 	$.ajaxSetup({cache: false}); //evitar cache	
 
+	 
+	$('#homepageHtml').click(function(){
+		alert('home');
 		detectInternet();
 		$('#webHomepageHtml').attr('src','http://reifaxhelper.booleam.com/homePage.php');
-
+	}
 			
 	
 	$("#searchInicio").on("keypress", function(e){       
