@@ -629,14 +629,14 @@
 						</div>	
 						<div class="ui-block-c grid">
 							<div class="ui-bar ui-bar-a tails" style="background-color:#7DBA00;border-color:#7DBA00;">
-								<a class="ui-link ui-btn2 ui-shadow ui-corner-all btn" id="webi" onclick="abrir()" data-transition="slide" data-title="WEBINARS" role="button">
+								<a class="ui-link ui-btn2 ui-shadow ui-corner-all btn" id="webi" href="webinarHtml" data-transition="slide" data-title="WEBINARS" role="button">
 									<img src="resources/image/tiles/tablet/webinars.png"/>
 								</a>
 							</div>					
 						</div>						
 						<div class="ui-block-c grid">
 							<div class="ui-bar ui-bar-a tails" style="background-color:#7DBA00;border-color:#7DBA00;">
-								<a class="ui-link ui-btn2 ui-shadow ui-corner-all btn" id="basic" onclick="abrir()" data-transition="slide" data-title="BASIC CONCEPTS" role="button">
+								<a class="ui-link ui-btn2 ui-shadow ui-corner-all btn" id="basic" href="basicHtml" data-transition="slide" data-title="BASIC CONCEPTS" role="button">
 								<img src="resources/image/tiles/tablet/basic_concepts.png"/>								
 								</a>
 							</div>
@@ -2258,7 +2258,21 @@ $(document).ready(function () {
 	
 	$("#home").click(function() {
 		detectInternet();
+		$.mobile.changePage("#homepageHtml");
 	});
+	
+	$("#webi").click(function() {
+		detectInternet();
+		$.mobile.changePage("#webinarHtml");
+	});
+	
+	$("#basic").click(function() {
+		detectInternet();
+		$.mobile.changePage("#basicHtml");
+	});
+	
+	
+	
 	
 	$("#searchInicio").on("keypress", function(e){       
 	
