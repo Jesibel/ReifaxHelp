@@ -238,6 +238,7 @@
      }
 
 	function abrir(){
+	alert('home');
        detectInternet();
 		$('#webHomepageHtml').attr('src','http://reifaxhelper.booleam.com/homePage.php');
     }	 
@@ -627,7 +628,7 @@
 					<div class="ui-grid-b nada">
 						<div class="ui-block-c grid">
 							<div class="ui-bar ui-bar-a tails" style="background-color:#7DBA00;border-color:#7DBA00;">
-								<a class="ui-link ui-btn2 ui-shadow ui-corner-all btn" onclick="javascript:abrir()" data-transition="slide" data-title="HOME PAGE" role="button">
+								<a class="ui-link ui-btn2 ui-shadow ui-corner-all btn" onclick="abrir()" data-transition="slide" data-title="HOME PAGE" role="button">
 								<img src="resources/image/tiles/tablet/how_to_buy.png"/>								
 								</a>
 							</div>
@@ -1028,7 +1029,7 @@
 	<div data-role="content" class="ui-content ui-body-noPadding">	
 			<iframe  allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" frameborder = 0
 					id="webHomepageHtml" class="iframeRender" style="width:100%; border:0 solid white;" 
-					src="">
+					>
 				<html>
 					<head></head>
 					<body></body>
@@ -2265,14 +2266,7 @@
 $(document).ready(function () {
 
 	$.ajaxSetup({cache: false}); //evitar cache	
-
-	 
-	$('#homepageHtml').click(function(){
-		alert('home');
-		detectInternet();
-		$('#webHomepageHtml').attr('src','http://reifaxhelper.booleam.com/homePage.php');
-	}
-			
+	
 	
 	$("#searchInicio").on("keypress", function(e){       
 	
