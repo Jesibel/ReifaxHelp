@@ -235,7 +235,12 @@
 				location.href = "#inicio";
 					
 			}*/
-     }	
+     }
+
+	function abrir(){
+       detectInternet();
+		$('#webHomepageHtml').attr('src','http://reifaxhelper.booleam.com/homePage.php');
+    }	 
 		
 	function noscreen() {
 		navigator.splashscreen.hide();
@@ -622,7 +627,7 @@
 					<div class="ui-grid-b nada">
 						<div class="ui-block-c grid">
 							<div class="ui-bar ui-bar-a tails" style="background-color:#7DBA00;border-color:#7DBA00;">
-								<a class="ui-link ui-btn2 ui-shadow ui-corner-all btn" onclick="detectInternet()" data-transition="slide" data-title="HOME PAGE" role="button">
+								<a class="ui-link ui-btn2 ui-shadow ui-corner-all btn" onclick="javascript:abrir()" data-transition="slide" data-title="HOME PAGE" role="button">
 								<img src="resources/image/tiles/tablet/how_to_buy.png"/>								
 								</a>
 							</div>
