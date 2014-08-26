@@ -240,9 +240,10 @@
 	function abrir(){
 		alert('home');
         detectInternet();
-		$('#homepageHtml').on('pageshow', function(event, ui) {
-			$('#webHomepageHtml').attr('src','http://reifaxhelper.booleam.com/homePage.php');
-		});
+		$.mobile.changePage("#homepageHtml");
+		alert('page');
+		$('#webHomepageHtml').attr('src','http://reifaxhelper.booleam.com/homePage.php');
+		
 		
     }	 
 		
