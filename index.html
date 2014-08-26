@@ -2258,13 +2258,15 @@ $(document).ready(function () {
 	
 	$("#tiles a").click(function() {
 		detectInternet();
-		alert( $('#tiles a').index(this));
 		
-		var home = $('a #home').val();
-		alert(home);
-		if (home!=""){
+		var clicked = $(this).attr('id');
+		alert(clicked);
+		if(clicked == "home"){
 			$.mobile.changePage("#homepageHtml");
 		}
+		
+			
+		
 		
 	});
 	
