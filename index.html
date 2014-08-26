@@ -186,7 +186,8 @@
 			
 		}
 		
-	/*function isOnline(no,yes){
+		
+	function isOnline(no,yes){
 		var xhr = XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHttp');
 		xhr.onload = function(){
 			if(yes instanceof Function){
@@ -217,15 +218,15 @@
 		}
 	);
 	
-     }*/
+     }
 
 	function abrir(){
 		alert('home');
         detectInternet();
 		
-		if ("#home").click(function(){
+		if ("#home"){
 		$.mobile.changePage("#homepageHtml");
-		});
+		}
 		//alert('page');
 		//$('#webHomepageHtml').attr('src','http://reifaxhelper.booleam.com/homePage.php');
 		
