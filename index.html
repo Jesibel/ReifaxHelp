@@ -168,7 +168,7 @@
 				contentType: "application/json;charset=utf-8",
 				success: function (data) {
 					// Yor success logic 
-						//alert('success bien');
+						alert('success bien');
 						
 						},
 				error: function (request) {
@@ -1023,7 +1023,7 @@
 	<div data-role="content" class="ui-content ui-body-noPadding">	
 			<iframe  allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" frameborder = 0
 					id="webHomepageHtml" class="iframeRender" style="width:100%; border:0 solid white;" 
-					src="http://reifaxhelper.booleam.com/homePage.php">
+					>
 				<html>
 					<head></head>
 					<body></body>
@@ -2257,8 +2257,10 @@ $(document).ready(function () {
 
 	$.ajaxSetup({cache: false}); //evitar cache	
 
-	//$('#webHomepageHtml').attr('src','http://reifaxhelper.booleam.com/homePage.php');
-	
+	$('#webHomepageHtml').click(function(){
+		detectInternet();
+		$('#webHomepageHtml').attr('src','http://reifaxhelper.booleam.com/homePage.php');
+	}
 			
 	
 	$("#searchInicio").on("keypress", function(e){       
