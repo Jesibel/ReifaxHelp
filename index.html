@@ -622,21 +622,21 @@
 					<div class="ui-grid-b nada">
 						<div class="ui-block-c grid">
 							<div class="ui-bar ui-bar-a tails" style="background-color:#7DBA00;border-color:#7DBA00;">
-								<a class="ui-link ui-btn2 ui-shadow ui-corner-all btn" id="home" href="homepageHtml" data-transition="slide" data-title="HOME PAGE" role="button">
+								<a class="ui-link ui-btn2 ui-shadow ui-corner-all btn" id="home" data-transition="slide" data-title="HOME PAGE" role="button">
 								<img src="resources/image/tiles/tablet/how_to_buy.png"/>								
 								</a>
 							</div>
 						</div>	
 						<div class="ui-block-c grid">
 							<div class="ui-bar ui-bar-a tails" style="background-color:#7DBA00;border-color:#7DBA00;">
-								<a class="ui-link ui-btn2 ui-shadow ui-corner-all btn" id="webi" href="webinarHtml" data-transition="slide" data-title="WEBINARS" role="button">
+								<a class="ui-link ui-btn2 ui-shadow ui-corner-all btn" id="webinar"  data-transition="slide" data-title="WEBINARS" role="button">
 									<img src="resources/image/tiles/tablet/webinars.png"/>
 								</a>
 							</div>					
 						</div>						
 						<div class="ui-block-c grid">
 							<div class="ui-bar ui-bar-a tails" style="background-color:#7DBA00;border-color:#7DBA00;">
-								<a class="ui-link ui-btn2 ui-shadow ui-corner-all btn" id="basic" href="basicHtml" data-transition="slide" data-title="BASIC CONCEPTS" role="button">
+								<a class="ui-link ui-btn2 ui-shadow ui-corner-all btn" id="basic" data-transition="slide" data-title="BASIC CONCEPTS" role="button">
 								<img src="resources/image/tiles/tablet/basic_concepts.png"/>								
 								</a>
 							</div>
@@ -2262,6 +2262,10 @@ $(document).ready(function () {
 		var clicked = $(this).attr('id');
 		alert(clicked);
 		if(clicked == "home"){
+			$.mobile.changePage("#homepageHtml");
+		}else if(clicked == "webinar"){
+			$.mobile.changePage("#homepageHtml");
+		}else if(clicked == "basic"){
 			$.mobile.changePage("#homepageHtml");
 		}
 		
