@@ -168,7 +168,7 @@
 				contentType: "application/json;charset=utf-8",
 				success: function (data) {
 					// Yor success logic 
-						alert('success bien');
+						//alert('success bien');
 						
 						},
 				error: function (request) {
@@ -227,14 +227,9 @@
 		if ("#home"){
 		$.mobile.changePage("#homepageHtml");
 		}
-		
-		
-		
-		
+
 		//alert('page');
-		//$('#webHomepageHtml').attr('src','http://reifaxhelper.booleam.com/homePage.php');
-		
-		
+		//$('#webHomepageHtml').attr('src','http://reifaxhelper.booleam.com/homePage.php');	
     }	 
 		
 	function noscreen() {
@@ -2297,7 +2292,7 @@ $(document).ready(function () {
 		detectInternet();
 		
 		var clicked = $(this).attr('id');
-		alert(clicked);
+		//alert(clicked);
 		if(clicked == "home"){
 			$.mobile.changePage("#homepageHtml");
 		}else if(clicked == "webinar"){
@@ -2339,7 +2334,7 @@ $(document).ready(function () {
 		detectInternet();
 		
 		var clicked = $(this).attr('id');
-		alert(clicked);
+		//alert(clicked);
 		if(clicked == "home"){
 			$.mobile.changePage("#homepageHtml");
 		}else if(clicked == "webinar"){
@@ -2500,6 +2495,7 @@ $(document).ready(function () {
 
 	$("#searchOverview").on("keypress", function(e){ 
 	if ($(".searchOverview:focus") && (e.keyCode === 13)) {
+	   detectInternet();
 	   var search = $("input#searchOverview").val();
 	   
        //alert(search);
@@ -2519,6 +2515,7 @@ $(document).ready(function () {
 	
 	$("#searchBrowser").on("keypress", function(e){ 	
 	if ($(".searchBrowser:focus") && (e.keyCode === 13)) {
+	   detectInternet();
 	   var search = $("input#searchBrowser").val();
 	   
        //alert(search);
@@ -2538,6 +2535,7 @@ $(document).ready(function () {
 	
 	$("#searchSearch").on("keypress", function(e){ 	
 	if ($(".searchSearch:focus") && (e.keyCode === 13)) {
+	   detectInternet();
 	   var search = $("input#searchSearch").val();
 	   
        //alert(search);
@@ -2557,6 +2555,7 @@ $(document).ready(function () {
 	
 	$("#searchResult").on("keypress", function(e){ 
 	if ($(".searchResult:focus") && (e.keyCode === 13)) {
+	   detectInternet();
 	   var search = $("input#searchResult").val();
 	   
        //alert(search);
@@ -2576,6 +2575,7 @@ $(document).ready(function () {
 	
 	$("#searchMarket").on("keypress", function(e){ 	
 	if ($(".searchMarket:focus") && (e.keyCode === 13)) {
+	   detectInternet();
 	   var search = $("input#searchMarket").val();
 	   
        //alert(search);
@@ -2595,6 +2595,7 @@ $(document).ready(function () {
 	
 	$("#searchReport").on("keypress", function(e){ 	
 	if ($(".searchReport:focus") && (e.keyCode === 13)) {
+	   detectInternet();
 	   var search = $("input#searchReport").val();
 	   
        //alert(search);
@@ -2614,6 +2615,7 @@ $(document).ready(function () {
 	
 	$("#searchMailing").on("keypress", function(e){ 	
 	if ($(".searchMailing:focus") && (e.keyCode === 13)) {
+	   detectInternet();
 	   var search = $("input#searchMailing").val();
 	   
        //alert(search);
@@ -2633,6 +2635,7 @@ $(document).ready(function () {
 
 	$("#searchSetting").on("keypress", function(e){ 	
 	if ($(".searchSetting:focus") && (e.keyCode === 13)) {
+	   detectInternet();
 	   var search = $("input#searchSetting").val();
 	   
        //alert(search);
@@ -2652,6 +2655,7 @@ $(document).ready(function () {
 	
 	$("#searchFollow").on("keypress", function(e){ 	
 	if ($(".searchFollow:focus") && (e.keyCode === 13)) {
+	   detectInternet();
 	   var search = $("input#searchFollow").val();
 	   
        //alert(search);
@@ -2671,6 +2675,7 @@ $(document).ready(function () {
 
 	$("#searchWebinar").on("keypress", function(e){ 	
 	if ($(".searchWebinar:focus") && (e.keyCode === 13)) {
+	   detectInternet();
 	   var search = $("input#searchWebinar").val();
 	   
        //alert(search);
