@@ -2378,10 +2378,10 @@ $(document).ready(function () {
 	
 
 	
-	
 	$("#searchInicio").on("keypress", function(e){       
 	
 	if ($(".searchInicio:focus")&& (e.keyCode === 13)) {
+			detectInternet();
 	  //alert("The enter key was pressed");
 			var searchI = $("input#searchInicio").val();
 			//alert(searchI);
@@ -2413,6 +2413,7 @@ $(document).ready(function () {
 	$("#searchHomePage").on("keypress", function(e){               	
 		
 		if ($(".searchHomePage:focus") && (e.keyCode === 13)) {
+			detectInternet();
 			var search = $("input#searchHomePage").val();
 				//alert("The enter key was pressed");
 				//alert(search);
@@ -2458,6 +2459,8 @@ $(document).ready(function () {
 	$("#searchMyAccount").on("keypress", function(e){ 
 
 	 if ($(".searchMyAccount:focus") && (e.keyCode === 13)) {
+	 
+	   detectInternet();
 	   var search = $("input#searchMyAccount").val();
 	   
        //alert(search);
@@ -2477,6 +2480,7 @@ $(document).ready(function () {
 	
 	$("#searchBasic").on("keypress", function(e){ 	
     if ($(".searchBasic:focus") && (e.keyCode === 13)) {
+	   detectInternet();
 	   var search = $("input#searchBasic").val();
 	   
        //alert(search);
